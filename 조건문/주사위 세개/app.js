@@ -1,6 +1,6 @@
 let input = require("fs")
   .readFileSync(__dirname + "/input.txt", { encoding: "utf-8" })
-  .split(" ");
+  .split(" ").map(Number);
 
 
 function sol(input) {
@@ -8,13 +8,14 @@ function sol(input) {
   let num = 0;
   let temp = {};
 
-  input.forEach((x) => {
+  input.map((x) => {
     temp[x] = (temp[x] || 0) + 1;
   });
 
   count = Math.max(...Object.values(temp));
   max = Math.max(...Object.keys(temp));
   num = +Object.entries(temp).find((v) => v[1] == count)[0];
+  console.log(temp,max,num)
   switch (count) {
     case 1:
       return console.log(max * 100);
@@ -24,6 +25,4 @@ function sol(input) {
       return console.log(10000 + num * 1000);
   }
 }
-sol([6,6,1]);
-sol([2,2,2]);
-sol([6,2,5]);
+sol(input);
