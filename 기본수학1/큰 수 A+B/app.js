@@ -4,4 +4,3 @@ let input = fs.readFileSync(file, { encoding: "utf-8" }).split(" ")
 
 let A=BigInt(input[0])
 let B=BigInt(input[0])
-console.log(A+B)
