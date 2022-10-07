@@ -1,30 +1,52 @@
-let fs=require("fs")
-let file=process.platform=="linux"?0:__dirname+"/input.txt"
-let input=+fs.readFileSync(file,{encoding:"utf-8"})
+// //**400ms */
+// let fs = require("fs");
+// let file = process.platform == "linux" ? 0 : __dirname + "/input.txt";
+// let input = +fs.readFileSync(file, { encoding: "utf-8" }).trim();
+// let arr = [];
+// let temp=2
+// let num=input
+// let ans = "";
+// while (true) {
+//   if (input == 1) break;
+//   if(input==2){
+//     arr.push(2)
+//     break;
+//   }
+//   while(input%temp==0){
+//     arr.push(temp)
+//     input=input/temp
+//   }
+ 
+//   if(temp>parseInt(num/2)+1){
+//     break;
+//   }
+//   temp++
 
-let num=input
-let arr=[]
 
+// }
+// if(arr.length==0&&num!==1){
+//     arr.push(num)
+// }
+// ans=arr.join("\n")
+// num!==1&&console.log(ans);
+// //** */
 
-function sol(input,num){
-    let temp=2;
-    if(input==1) return;
-    if(input==2){
-        return console.log(2)
-    }
+//**모범답안 if문이 while에 있으니 평가가 많다. */
+let fs = require("fs");
+let file = process.platform == "linux" ? 0 : __dirname + "/input.txt";
+let input = +fs.readFileSync(file, { encoding: "utf-8" }).trim();
+let arr=[];
+let primeNum=2;
 
-    
-    while(true){
-    while(num%temp==0){
-        console.log(temp)
-        arr.push(temp)
-        input=input/temp
-    }
-    temp++
-    // console.log(temp)
-    if(temp>parseInt(num/2)+2)break;
+while(input!=1){
+
+    if(input%primeNum==0){
+        arr.push(primeNum)
+        input=input/primeNum
+    }else{
+        primeNum++
     }
 }
-
-sol(input,num)
-console.log(arr.join("\n"))
+arr.length==0
+let ans=arr.join("\n")
+console.log(ans)
