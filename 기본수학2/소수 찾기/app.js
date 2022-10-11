@@ -5,7 +5,9 @@ let len=input.shift();
 let cnt=0
 input=input[0].split(" ").map(v=>{if(isPrime(+v))++cnt})
 
+//56이 소수인가 아닌가?
 function isPrime(n){
+
     let temp=parseInt(n/2)
     let isPrime=true
     if(n===1)return false;

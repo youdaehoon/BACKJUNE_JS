@@ -9,6 +9,8 @@ let [M, N] = input;
 let sum = 0;
 let min = M;
 let cnt=0
+
+
 while (M <= N) {
   if (isPrime(M)) sum += M;
   M++;

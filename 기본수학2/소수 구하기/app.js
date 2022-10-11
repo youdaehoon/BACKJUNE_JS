@@ -32,8 +32,8 @@ let input = fs
   .map(Number);
 let [M, N] = input;
 
-
 let isPrimeArr = new Array(N + 1).fill(true);
+
 isPrimeArr[1] = false;
 let sqrt = Math.sqrt(N);
 for (let i = 2; i <= Math.ceil(sqrt); i++) {
@@ -54,5 +54,7 @@ for (let j = M; j <= N; j++) {
 }
 let ans = ansArr.join("\n");
 console.log(ans);
+
+
 
 //** */

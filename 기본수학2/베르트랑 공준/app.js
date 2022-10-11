@@ -37,6 +37,7 @@
 
 //**에라토스의 체 업그레이드 */
 
+
 let fs = require("fs");
 let file = process.platform == "linux" ? 0 : __dirname + "/input.txt";
 let input = fs
